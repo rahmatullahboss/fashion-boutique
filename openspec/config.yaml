@@ -1,0 +1,24 @@
+schema: spec-driven
+
+context: |
+  Project: Atelier Alabaster — Premium USA-based clothing boutique website
+  Tech Stack: Cloudflare Pages (React + Vite), Cloudflare Workers (Hono API), Cloudflare D1 (SQLite), Cloudflare R2 (images)
+  Styling: Vanilla CSS with brutalist elegance aesthetic — dark backgrounds, neon green accents, off-white (#F5F3EF) backgrounds, editorial typography
+  Design: 10 Stitch-generated screens (5 desktop + 5 mobile) providing the design prototype
+  Key Pages: Home, Collection Index, Product Detail (PDP), Lookbook, Cart
+  Domain: High-end fashion e-commerce for US market
+  Performance: Ultra-fast, edge-rendered, Cloudflare-native
+
+rules:
+  proposal:
+    - Reference the Stitch design screens as the visual foundation
+    - Use Cloudflare-native services only (Workers, Pages, D1, R2, KV)
+    - Target ultra-fast performance with edge rendering
+  design:
+    - Follow the brutalist elegance / atelier alabaster aesthetic from Stitch screens
+    - Neon green (#AAFF00) accent color, off-white (#F5F3EF) backgrounds, dark (#1A1A1A) hero sections
+    - Large editorial typography, generous whitespace
+    - Mobile-first responsive design with bottom tab navigation
+  tasks:
+    - Break into clear phases: foundation, pages, interactions, polish
+    - Each task should be completable in under 3 hours

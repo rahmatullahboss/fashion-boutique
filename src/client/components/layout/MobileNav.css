@@ -1,0 +1,49 @@
+.mobile-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-mobile-nav);
+  background: rgba(250, 248, 240, 0.8);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 1.5rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
+  border-radius: 40px 40px 0 0;
+  box-shadow: var(--shadow-nav);
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #9ca3af;
+  text-decoration: none;
+  transition: all var(--duration-slow) var(--ease-fluid);
+}
+
+.mobile-nav-item.active {
+  color: #166534;
+  font-weight: 700;
+  transform: scale(1.1);
+}
+
+.mobile-nav-item:hover {
+  color: #166534;
+}
+
+.mobile-nav-item .material-symbols-outlined {
+  font-size: 24px;
+}
+
+.mobile-nav-label {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}

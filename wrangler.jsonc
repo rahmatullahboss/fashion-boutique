@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "atelier-alabaster",
+  "main": "./worker.ts",
+  "compatibility_date": "2026-03-17",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./dist/client",
+    "not_found_handling": "single-page-application"
+  },
+  "observability": {
+    "enabled": true
+  },
+  // Smart Placement — run Worker near the database
+  "placement": { "mode": "smart" },
+  // Environment variables
+  "vars": {
+    "ENVIRONMENT": "development",
+    "DATABASE_URL": "postgresql://neondb_owner:npg_H48WrntCamfb@ep-muddy-poetry-a1kozb1k-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
+    "STRIPE_PUBLISHABLE_KEY": "pk_test_51TDDvHR73A7Q7hFUBgdC5UA6qihPhMf0BfIozLvyzel1QFiwGh2KgTRV7FT2u65Q1tv0yGfvbAAbRmexb4XMYElZ00ud6AGQh5",
+    "SITE_URL": "https://showcase.digitalcare.site"
+  }
+  // D1 / R2 / KV bindings (uncomment when ready for production)
+  // "d1_databases": [
+  //   { "binding": "DB", "database_name": "atelier-db", "database_id": "..." }
+  // ],
+  // "r2_buckets": [
+  //   { "binding": "IMAGES", "bucket_name": "atelier-images" }
+  // ],
+  // "kv_namespaces": [
+  //   { "binding": "CACHE", "id": "..." }
+  // ]
+}

@@ -1,0 +1,61 @@
+.brand-statement {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.brand-statement-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand-statement-label {
+  font-family: var(--font-heading);
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  opacity: 0.5;
+}
+
+.brand-statement-text {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--color-on-surface);
+}
+
+.brand-statement-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--color-outline-variant);
+}
+
+.brand-statement-body {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--color-on-surface);
+  opacity: 0.6;
+  max-width: 480px;
+}
+
+@media (min-width: 769px) {
+  .brand-statement {
+    padding: 6rem 4rem;
+  }
+
+  .brand-statement-text {
+    font-size: 2rem;
+  }
+
+  .brand-statement-body {
+    font-size: 1rem;
+  }
+}

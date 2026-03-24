@@ -1,0 +1,116 @@
+.featured-products {
+  padding: 2rem 1.5rem;
+}
+
+.featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.featured-heading {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-on-surface);
+}
+
+.featured-view-all {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+  transition: color var(--duration-normal) var(--ease-fluid);
+}
+
+.featured-view-all:hover {
+  color: var(--color-on-surface);
+}
+
+.featured-view-all .material-symbols-outlined {
+  font-size: 1rem;
+}
+
+/* 2-column grid */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+/* Product Card */
+.product-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--duration-hero) var(--ease-fluid);
+}
+
+.product-card:active {
+  transform: scale(0.97);
+}
+
+.product-card-image {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-container-low);
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-hero) var(--ease-fluid);
+}
+
+.product-card:hover .product-card-image img {
+  transform: scale(1.05);
+}
+
+.product-card-info {
+  padding: 0.75rem 0.25rem;
+}
+
+.product-card-name {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: var(--color-on-surface);
+  margin-bottom: 0.25rem;
+}
+
+.product-card-price {
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: var(--color-on-surface-variant);
+}
+
+/* Desktop: 4-column */
+@media (min-width: 769px) {
+  .featured-products {
+    padding: 4rem;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
+  .featured-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .featured-heading {
+    font-size: 2rem;
+  }
+}

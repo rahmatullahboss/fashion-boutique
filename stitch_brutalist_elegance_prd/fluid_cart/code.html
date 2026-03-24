@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fluid Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5fec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                    transitionTimingFunction: {
+                        'fluid': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    transitionDuration: {
+                        '800': '800ms',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Lock scroll when cart is open */
+        }
+        
+        /* Simulating the entry animation for demonstration */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .drawer-enter {
+            animation: slideIn 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        .backdrop-enter {
+            animation: fadeIn 800ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Hide scrollbar for the cart items list */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light antialiased h-screen w-full relative">
+<!-- Faux Background Content (to show blur effect) -->
+<div class="absolute inset-0 z-0 p-12 flex flex-wrap gap-8 opacity-40 grayscale">
+<div class="w-1/3 h-96 bg-gray-200 rounded-lg bg-cover bg-center" data-alt="minimalist fashion model wearing oversized neutral tones standing against concrete wall" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJdJ7zh7_3GJ2FOgAkFrS043n_UYt-Z2PfJjcdI7KBPg3H9RB8--q2r809BZixsigYbaPFRkimkJIjtYUep5mDklB99k67fnqMNZiYuhl9nyDOoc69CU3xoFsbTArFri9wMk8k6EBJeqgzgK0uejAQ_uBS4Ker1IRjH-e1QGQaBMkt0fcJQxuJNMsLMRr1hhvJDMM1rHu4yAI0KSnOYk5vZ1YR18oUj02X5ikDQCLAtiTwTWCWLHp2Rkxnv8ze37ooK1rcUIVXIpgI');"></div>
+<div class="w-1/4 h-96 bg-gray-200 rounded-lg bg-cover bg-center" data-alt="close up of textured woven fabric in earthy beige and olive tones" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrMAVKZpBvLkI1_Mj_r0vpw3cyPyaTbH8yVYQ6EvFAUZqmV5xrrykseTEPjosDmDPqtyzIbnNFNqAMzWTDk7A4mX6M3g8E05WyYKys0CyW4R0_7wz-8yKg4XfGWvfn9uMO5Es9DYPMK6rgQpB0VBd8aFEonEInzeYU_fAXlw29ZXVI1L1XVL0iC9nDpUr72N8YwVZ03yui3fEbWCOEUuAvr1NfHS5XMVHbdzEorW4o7LDxmhkLfFesC_Nq3JfZHlM9JShWfn__Nw2W');"></div>
+<div class="w-1/3 h-96 bg-gray-200 rounded-lg bg-cover bg-center mt-12" data-alt="avant garde architectural detail with soft sunlight casting sharp geometric shadows" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDjVd8ODEQ-CTt3R4PHXKLsIYE0oDO7s853pShZKMevU1sp4kwz284OwFGezU3_P_5CKtxrinmuj-hz9yLalQDTlFSMqft_f9mzGX_FQZa8FodhtdJCP0i1Fer4YdLpNw8SHNgY0a7gc6xvlOLsEU-EM4hidcEEsfCxPRzHMdmFCM_O2bX14k4vSfO0dPNxe2LLnOmwAMkJfhsuEc08VRiYjHBJSqMif3zbgxLDDh6ELJMPdiDbEdYNVfwy2Hsd8nyxKatz9QvZASPo');"></div>
+</div>
+<!-- Glassmorphic Backdrop -->
+<div aria-hidden="true" class="fixed inset-0 z-40 bg-[#151412]/40 backdrop-blur-[12px] backdrop-enter transition-opacity duration-800 ease-fluid"></div>
+<!-- Fluid Cart Drawer -->
+<div class="fixed inset-y-0 right-0 z-50 w-full md:w-[40vw] min-w-[320px] max-w-[600px] bg-white rounded-l-[40px] shadow-2xl flex flex-col drawer-enter transform translate-x-0">
+<!-- Header -->
+<div class="flex items-center justify-between px-10 py-8 border-b border-gray-100 shrink-0">
+<h2 class="text-[#21201E] text-2xl font-semibold tracking-[-0.02em]">Your Selection</h2>
+<button aria-label="Close Cart" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-50 transition-colors text-[#21201E]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">close</span>
+</button>
+</div>
+<!-- Cart Items List -->
+<div class="flex-1 overflow-y-auto px-10 py-6 no-scrollbar flex flex-col gap-8">
+<!-- Item 1 -->
+<div class="flex gap-6 group relative transition-all duration-800 ease-fluid opacity-100">
+<div class="w-[120px] aspect-[3/4] rounded-lg bg-gray-100 shrink-0 overflow-hidden relative">
+<img alt="Avant-Garde Trench" class="w-full h-full object-cover" data-alt="model wearing structured oversized trench coat in muted sage green against plain white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe5U9NfEGAmbWlNylDxdubFt9rJo6BgEi7CWIW1VbyY6wwg_W8loRdwVMrnuA4uync4oQvGNxLiESd_Q896apS-jtiFKWnWFYMT-rV4WG1mMNyIVW7uOdUdXUeEA0bRRnyxtYRUD3Tmnkk2KGzRl5gEXFTEmD0TuP1_ezeKy_BnKJXdCrjzhbB7Uq2aemBk2BPIhnWB20xS6WCwX5AiBKUGIKv9LK37CAHmFPEOB37dPCKWEdIevdiE3Sk10K8nguBTA1o2toVciki"/>
+</div>
+<div class="flex flex-col flex-1 py-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-[#21201E] text-lg font-medium tracking-tight">Avant-Garde Trench</h3>
+<p class="text-[#21201E] text-lg font-medium">$450</p>
+</div>
+<p class="text-[#8C9386] text-sm font-normal mb-auto uppercase tracking-wide">Size: M • Color: Sage</p>
+<div class="flex items-center justify-between mt-4">
+<!-- Quantity Pill -->
+<div class="flex items-center justify-between w-[100px] h-[40px] rounded-full border border-[#D6D3C9] px-2 text-[#21201E]">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-50 transition-colors text-sm">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="text-sm font-medium w-4 text-center">1</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-50 transition-colors text-sm">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="text-[#8C9386] hover:text-[#21201E] text-sm uppercase tracking-wide font-medium transition-colors border-b border-transparent hover:border-[#21201E]">
+                            Remove
+                        </button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-6 group relative transition-all duration-800 ease-fluid opacity-100">
+<div class="w-[120px] aspect-[3/4] rounded-lg bg-gray-100 shrink-0 overflow-hidden relative">
+<img alt="Pleated Wide Trousers" class="w-full h-full object-cover" data-alt="close up of wide leg pleated trousers in dark charcoal grey draped organically" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSnnWVlI9msBWpg-thjze0hGcN3fNS9NoS1t3jkdl80CuUJUilpfl6lo2tFJE9oIAXRjBcWn1bOIzdEQEeGCv8_E7LftR35UXw4ok9mvQ2g9myhSfxc_xHXlewv_hOE0gnzzIIL_TNLv636qOR3HKhonkRkMcXsrxX26vYMITM-KvhcoAg6sU4dS-bWkQhy8GANJRWFbVhJNJEsdw1m0y63lx7iukPDCGVmntb8uiJC_08eWDTl9naXFaCceYovPPXAaK7LxR8LU-O"/>
+</div>
+<div class="flex flex-col flex-1 py-1">
+<div class="flex justify-between items-start mb-1">
+<h3 class="text-[#21201E] text-lg font-medium tracking-tight">Pleated Wide Trousers</h3>
+<p class="text-[#21201E] text-lg font-medium">$280</p>
+</div>
+<p class="text-[#8C9386] text-sm font-normal mb-auto uppercase tracking-wide">Size: 32 • Color: Charcoal</p>
+<div class="flex items-center justify-between mt-4">
+<!-- Quantity Pill -->
+<div class="flex items-center justify-between w-[100px] h-[40px] rounded-full border border-[#D6D3C9] px-2 text-[#21201E]">
+<button aria-label="Decrease quantity" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-50 transition-colors text-sm">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<span class="text-sm font-medium w-4 text-center">2</span>
+<button aria-label="Increase quantity" class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-50 transition-colors text-sm">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="text-[#8C9386] hover:text-[#21201E] text-sm uppercase tracking-wide font-medium transition-colors border-b border-transparent hover:border-[#21201E]">
+                            Remove
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Checkout Action -->
+<div class="px-10 py-8 bg-white border-t border-gray-100 shrink-0 mt-auto rounded-bl-[40px]">
+<div class="flex justify-between items-end mb-2">
+<p class="text-[#8C9386] text-sm uppercase tracking-wide">Subtotal</p>
+<p class="text-[#21201E] text-2xl font-semibold tracking-[-0.02em]">$1,010</p>
+</div>
+<p class="text-[#8C9386] text-xs mb-6">Taxes and shipping calculated at checkout.</p>
+<button class="w-full h-16 bg-[#21201E] text-white rounded-full flex items-center justify-center text-sm uppercase tracking-[0.05em] font-medium hover:bg-primary hover:text-[#162210] transition-colors duration-300">
+                Acquire Pieces
+            </button>
+</div>
+</div>
+</body></html>

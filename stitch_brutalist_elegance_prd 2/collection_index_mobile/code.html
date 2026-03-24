@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atelier Alabaster - Collections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;800&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        /* Custom Font Definitions from Design System */
+        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@300,400,500,600,700&f[]=satoshi@300,400,500,700&display=swap');
+        
+        body {
+            font-family: 'Satoshi', 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .font-clash { font-family: 'Clash Display', 'Epilogue', sans-serif; }
+        
+        .glass-panel {
+            background: rgba(251, 249, 243, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .asymmetric-grid div:nth-child(even) {
+            margin-top: 3rem;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-container": "#71766c",
+                "on-surface-variant": "#454842",
+                "surface-variant": "#e4e2dd",
+                "outline": "#757871",
+                "on-background": "#1b1c18",
+                "inverse-surface": "#30312d",
+                "primary-container": "#93908d",
+                "on-tertiary-fixed-variant": "#434840",
+                "error-container": "#ffdad6",
+                "on-secondary-fixed-variant": "#42493e",
+                "tertiary": "#585e54",
+                "outline-variant": "#c5c7bf",
+                "on-tertiary-fixed": "#181d16",
+                "on-error-container": "#93000a",
+                "surface-bright": "#fbf9f3",
+                "surface": "#fbf9f3",
+                "on-tertiary": "#ffffff",
+                "surface-dim": "#dcdad4",
+                "inverse-primary": "#cac6c2",
+                "inverse-on-surface": "#f3f1eb",
+                "surface-container-low": "#f5f3ed",
+                "on-surface": "#1b1c18",
+                "secondary-fixed": "#dee5d6",
+                "surface-container-highest": "#e4e2dd",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#cac6c2",
+                "surface-tint": "#605e5b",
+                "surface-container-high": "#eae8e2",
+                "background": "#fbf9f3",
+                "tertiary-fixed-dim": "#c3c8bd",
+                "surface-container-lowest": "#ffffff",
+                "surface-container": "#f0eee8",
+                "primary": "#605e5b",
+                "on-secondary-fixed": "#171d14",
+                "on-secondary-container": "#60665b",
+                "secondary": "#5a6055",
+                "on-tertiary-container": "#fafef2",
+                "on-primary-fixed": "#1c1b19",
+                "primary-fixed": "#e6e2de",
+                "on-primary-fixed-variant": "#484644",
+                "secondary-container": "#dee5d6",
+                "on-secondary": "#ffffff",
+                "error": "#ba1a1a",
+                "on-primary": "#ffffff",
+                "tertiary-fixed": "#dfe4d8",
+                "on-primary-container": "#2b2a27",
+                "secondary-fixed-dim": "#c2c9bb"
+              },
+              fontFamily: {
+                "headline": ["Clash Display", "Epilogue"],
+                "body": ["Satoshi", "Manrope"],
+                "label": ["Satoshi", "Manrope"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/70 dark:bg-neutral-900/70 backdrop-blur-xl flex justify-between items-center px-8 py-6 w-full">
+<div class="flex items-center hover:opacity-70 transition-opacity duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
+<span class="material-symbols-outlined text-neutral-900 dark:text-stone-50" data-icon="menu">menu</span>
+</div>
+<h1 class="font-['Clash_Display'] text-xl font-medium tracking-[0.2em] text-neutral-800 dark:text-stone-100 uppercase">Atelier Alabaster</h1>
+<div class="flex items-center hover:opacity-70 transition-opacity duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
+<span class="material-symbols-outlined text-neutral-900 dark:text-stone-50" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="pt-28 pb-32 px-6">
+<!-- Hero Title Section -->
+<section class="mb-12">
+<span class="font-label text-xs tracking-[0.3em] uppercase opacity-60 mb-2 block">Volume IV</span>
+<h2 class="font-headline text-5xl font-medium tracking-tight leading-none text-primary">Sculptural<br/>Silence</h2>
+<div class="mt-6 flex gap-4">
+<button class="px-6 py-2 rounded-full bg-surface-container-highest text-on-surface text-xs font-medium tracking-wide">All Pieces</button>
+<button class="px-6 py-2 rounded-full bg-transparent text-on-surface-variant text-xs font-medium tracking-wide opacity-50">Outerwear</button>
+<button class="px-6 py-2 rounded-full bg-transparent text-on-surface-variant text-xs font-medium tracking-wide opacity-50">Silks</button>
+</div>
+</section>
+<!-- Asymmetric Collection Grid -->
+<section class="asymmetric-grid">
+<!-- Item 1 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/4] rounded-lg overflow-hidden bg-surface-container-low mb-3 relative">
+<img alt="Fashion Garment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Avant-garde high fashion model wearing oversized structured cream wool coat against a minimal architectural background with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_c1wYkrsIYiWcmYaPT052h5oAssSZ5YprnMnPnhv1SNVoDisTRCj4lv44Isb8wttgX7cBVG4LaEaUdh6o6pmEXXJLtbrO-n_6LibXgJdGRW96cp-rDSobt_4OxcUDTJoc1RARNPWzfhAlkAZJygDGc6FGeO4dEXF32-4gwaYR7kgn8vdLexKGoitt9qcCoddQtWJDt4rkG_3J1s7KpVQBtWzj1JHaM3gs6-6aB6fRNEJ4tMlrhnvbzG1GCMZKxhKaEFnrNte5-s5O"/>
+<div class="absolute bottom-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</div>
+</div>
+<div class="px-1">
+<h3 class="font-headline text-sm font-medium tracking-wide text-on-surface">Alabaster Column Coat</h3>
+<p class="font-body text-xs text-on-surface-variant mt-1">€1,850</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group cursor-pointer">
+<div class="aspect-[3/5] rounded-lg overflow-hidden bg-surface-container-low mb-3 relative">
+<img alt="Fashion Garment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elegant female model wearing draped silk dress in soft sage green, minimal studio lighting, ethereal aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1zvwrbBGmq86pHYHdKVxJCc9wjug0ueda7jjjovrJ3xMYEoARa_vc4c6sWvTgN0qC1mA-peca36tEWTEIk24_bn0C_81gwy_FuFyei22wgS0H9u3EKQ2ZOvGBVEap1hj9_IiRYgXnCNMxuqiT6E1EJPXOPIVfQDhYw9Ux2pb3waxdD2kblyVx6LbrTOkN1egxQBQAQGWl4aT9YhV_uh5Kt5KEtVTC4kLgD_e7-g1l-EdpkwpD_ztbtcnD1ivh4zftYuOc7lLSJvit"/>
+<div class="absolute bottom-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</div>
+</div>
+<div class="px-1">
+<h3 class="font-headline text-sm font-medium tracking-wide text-on-surface">Fluid Silk Drapery</h3>
+<p class="font-body text-xs text-on-surface-variant mt-1">€920</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group cursor-pointer">
+<div class="aspect-[2/3] rounded-lg overflow-hidden bg-surface-container-low mb-3 relative">
+<img alt="Fashion Garment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close up of high quality charcoal cashmere knit texture on a model, soft natural morning light from a large window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA24mYFd6fr3NcuF0HFWHSf_tF9EeXbTbPnYL2WtrSl7pUtulyi5dzH93_jKJiE3M1B3qIsJqXAq8uFKelLG6PlxhR-JSOj6DfpvOAnN1C5A77w7daJk-msoQeLUv-7ad2i__mVDSexgV4ELi1KKp0ZxkEK-GjqZnDPYpfOhw2tEFn92U_iMrLs2Mkm4rQhna00T37AUST7L7_NQII4_5QnJWj7IkgtPnQwtcn5O20pZfIqSlfGlz3vEcRRROqtn95J_5db_IbJqIUA"/>
+<div class="absolute bottom-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</div>
+</div>
+<div class="px-1">
+<h3 class="font-headline text-sm font-medium tracking-wide text-on-surface">Raw Cashmere Knit</h3>
+<p class="font-body text-xs text-on-surface-variant mt-1">€640</p>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="group cursor-pointer">
+<div class="aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3 relative">
+<img alt="Fashion Garment" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Fashion model walking in asymmetric white linen trousers and a structured vest, clean minimal urban setting with concrete textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk5o1Hi0EppeZSs5yeF5CPRCvRs1SMVOg--3uuW8jVEQNDYRGdsmc6QMpLqFVolWgOb_Apsjrm6-OrUe7YVWH1EBx3djFOX1RIL50tthQx40Bqy-4QW8M_UbVU_GEYkRaBd2HzaG3jb5aXu4UlS7Whk3VMBK32ny4_ip25zGmvAex39sqCDAQpRaIixbuq3sKVZNB33AXxcTXUUpJQcMu4MFN6NZLMJJmaoHmfFCj5-HuoRt4m0gn0nsG2BIig602NzGvxY_oU-YWD"/>
+<div class="absolute bottom-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+</div>
+</div>
+<div class="px-1">
+<h3 class="font-headline text-sm font-medium tracking-wide text-on-surface">Shell Trousers</h3>
+<p class="font-body text-xs text-on-surface-variant mt-1">€480</p>
+</div>
+</div>
+</section>
+<!-- Signature Component: Floating Lookbook Prompt -->
+<section class="mt-24 mb-12">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline text-3xl font-medium tracking-tight text-primary">Process<br/>Series</h2>
+<a class="font-label text-xs uppercase tracking-widest border-b border-outline-variant pb-1" href="#">View Editorial</a>
+</div>
+<div class="relative w-full h-80 overflow-hidden rounded-lg group">
+<img alt="Artisan Process" class="w-full h-full object-cover grayscale opacity-80" data-alt="Close up of artisan hands working with heavy cream fabric and chalk on a wooden cutting table, warm atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeCyQKSoj3sUJjF9CEDp8qaFzL9tylShQ5fbjHPVr6urTp4SX6CZWRJBR9qY5v_gib0DZ14_vkLsKkQrdTGo_zPM5D_y4dif480ak5XKzflfwOib7O2RwNG3HHo-dJWQ4MXRHVwCpR1VEKoAj0NO3-1d5mhIV5QKzq4kGWX9juHLoRx7CT9QiS-2ma966QndahCbwBNvqF15_wnCemkJgrQzzMnZtRKDyP3dvV_JQUtSSIafRZK2GN2cm_RM7bveeUHRPSgJrJMYeo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+<div class="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-lg">
+<h4 class="font-headline text-lg font-medium mb-2">The Architecture of Wool</h4>
+<p class="font-body text-sm text-on-surface-variant leading-relaxed">A deep dive into the structural integrity of our winter weights.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4 bg-stone-50/80 dark:bg-neutral-900/80 backdrop-blur-2xl z-50 rounded-t-[40px] shadow-[0_-4px_40px_rgba(0,0,0,0.04)]">
+<!-- Home -->
+<div class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-600">
+<span class="material-symbols-outlined" data-icon="home_max">home_max</span>
+<span class="font-['Satoshi'] text-[10px] font-medium tracking-tight mt-1">Home</span>
+</div>
+<!-- Collections (Active) -->
+<div class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-400 font-bold scale-110 duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
+<span class="material-symbols-outlined" data-icon="auto_awesome_motion" style="font-variation-settings: 'FILL' 1;">auto_awesome_motion</span>
+<span class="font-['Satoshi'] text-[10px] font-medium tracking-tight mt-1">Collections</span>
+</div>
+<!-- Lookbook -->
+<div class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-600">
+<span class="material-symbols-outlined" data-icon="collections">collections</span>
+<span class="font-['Satoshi'] text-[10px] font-medium tracking-tight mt-1">Lookbook</span>
+</div>
+<!-- Profile -->
+<div class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-600">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span>
+<span class="font-['Satoshi'] text-[10px] font-medium tracking-tight mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

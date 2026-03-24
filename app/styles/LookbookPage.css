@@ -1,0 +1,145 @@
+.lookbook-page {
+  min-height: 100vh;
+}
+
+.lookbook-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+/* Hero */
+.lookbook-hero {
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.lookbook-hero-label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  opacity: 0.5;
+}
+
+.lookbook-hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-on-surface);
+  margin-top: 1rem;
+}
+
+.lookbook-hero-title em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-on-surface-variant);
+}
+
+.lookbook-hero-desc {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-on-surface);
+  opacity: 0.6;
+  margin-top: 1.5rem;
+}
+
+/* Entries */
+.lookbook-entries {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.lookbook-entry {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.lookbook-entry--reversed {
+  flex-direction: row-reverse;
+}
+
+.lookbook-entry-image {
+  width: 50%;
+  aspect-ratio: 3 / 4;
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.lookbook-entry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-hero) var(--ease-fluid);
+}
+
+.lookbook-entry:hover .lookbook-entry-image img {
+  transform: scale(1.03);
+}
+
+.lookbook-entry-info {
+  flex: 1;
+}
+
+.lookbook-entry-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  opacity: 0.5;
+}
+
+.lookbook-entry-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-on-surface);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.lookbook-entry-desc {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: var(--color-on-surface);
+  opacity: 0.6;
+  max-width: 400px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .lookbook-hero {
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .lookbook-entries {
+    padding: 0 1.5rem 7rem;
+    gap: 3rem;
+  }
+
+  .lookbook-entry,
+  .lookbook-entry--reversed {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .lookbook-entry-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    border-radius: 1.5rem;
+  }
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fluid Modernity - Product Detail</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Custom Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5fec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                        "fm-primary": "#21201E",
+                        "fm-background": "#F4F2EC",
+                        "fm-surface": "rgba(244, 242, 236, 0.6)",
+                        "fm-text": "#4A4844",
+                        "fm-muted": "#D6D3C9",
+                        "fm-accent": "#8C9386"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px",
+                        "fm-lg": "40px",
+                        "fm-md": "20px",
+                        "fm-sm": "8px"
+                    },
+                    boxShadow: {
+                        'fm-soft': '0 20px 40px rgba(33, 32, 30, 0.04)',
+                    },
+                    transitionTimingFunction: {
+                        'fm-fluid': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Styles for Glassmorphism & Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #F4F2EC;
+            color: #4A4844;
+            font-family: 'Manrope', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .glass-panel {
+            background-color: rgba(244, 242, 236, 0.6);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        /* Accordion Custom Styling */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-fm-background text-fm-text font-body min-h-screen selection:bg-fm-primary selection:text-fm-background">
+<!-- Minimal Back Navigation (Destination Exception: Product Detail is focused, but technically part of browsing. Let's use a minimal back button as instructed for "Focused Views") -->
+<nav class="fixed top-0 left-0 w-full z-50 p-8 flex justify-between items-center pointer-events-none">
+<a class="w-12 h-12 rounded-full bg-fm-surface backdrop-blur-xl flex items-center justify-center text-fm-primary hover:bg-white transition-colors duration-300 pointer-events-auto shadow-fm-soft border border-fm-muted/30" href="#">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+</a>
+<!-- Right side actions -->
+<div class="flex gap-4 pointer-events-auto">
+<button class="w-12 h-12 rounded-full bg-fm-surface backdrop-blur-xl flex items-center justify-center text-fm-primary hover:bg-white transition-colors duration-300 shadow-fm-soft border border-fm-muted/30">
+<span class="material-symbols-outlined text-xl" data-icon="favorite">favorite</span>
+</button>
+<button class="w-12 h-12 rounded-full bg-fm-surface backdrop-blur-xl flex items-center justify-center text-fm-primary hover:bg-white transition-colors duration-300 shadow-fm-soft border border-fm-muted/30">
+<span class="material-symbols-outlined text-xl" data-icon="shopping_bag">shopping_bag</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Layout -->
+<main class="flex w-full min-h-screen relative">
+<!-- Left Side: Fluid Scrollable Gallery (60%) -->
+<div class="w-[60%] p-10 pt-28 pb-32 flex flex-col gap-[40px] hide-scrollbar overflow-y-auto h-screen relative z-10">
+<div class="w-full aspect-[3/4] rounded-fm-lg overflow-hidden bg-fm-muted relative shadow-fm-soft group">
+<img alt="Structured wool overcoat detail shot" class="w-full h-full object-cover transition-transform duration-[800ms] ease-fm-fluid group-hover:scale-105" data-alt="close up of textured structured wool overcoat in muted charcoal grey, soft diffuse studio lighting, minimalist background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi93Lrb8Ql2MY5f-7_Mq0TFPoteOl6dtkvZtLarvdXiyoYPRIFi0U8A_jDGHGgwHDydwHgPIURbgtx6oUDO1QOuu8CpjeAGiRYz57KaHspUfHHtUJEqdvIbZPxLW8QU2Xgmw6e3s2iGwxh4gBCwk3dfQi_IGfiZGs9YVcfLa-XC9_kSocMS43XLkUk24EnmPJ691Ilhoci2HRNxh8WtYrOSOi0edNJbkBpG9lQrbx0Q11l52l9EFmL3YrXy1kug1Ml05sYka3XBjzr"/>
+</div>
+<div class="w-full aspect-[3/4] rounded-fm-lg overflow-hidden bg-fm-muted relative shadow-fm-soft group">
+<img alt="Overcoat side profile" class="w-full h-full object-cover transition-transform duration-[800ms] ease-fm-fluid group-hover:scale-105" data-alt="side profile of a person wearing a structured wool overcoat, soft warm lighting, minimalist architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA0i6_s_JWN3DtxRcjM4hXfd6iw3htS2JPKzlDdfBfspB7y6GtNhjR5H8uN24dJWdIGmhUHl_9Klnonq1kVjF6JbgNG1iTY3HQzq9CYMWADZPBqNnDBpXayLBBrdr6i0fFzVTWv2chs1bjp3EWbps3yZuKI3N_t2UEgMS_mIA-eFh1_sI2K3rRpnPjLNNVxaovkVmnlN4_MmyENNfVYyxisYWKOwUL57Tup-_c4qcYZz1iGKHIgCHhFOLpDSU1pmRP6MQcCkA3AZ0t"/>
+</div>
+<div class="w-full aspect-[4/5] rounded-fm-lg overflow-hidden bg-fm-muted relative shadow-fm-soft group">
+<img alt="Overcoat fabric texture" class="w-full h-full object-cover transition-transform duration-[800ms] ease-fm-fluid group-hover:scale-105" data-alt="macro shot of heavy wool fabric texture in muted charcoal, shallow depth of field, soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA55hfOLvpviOopDZw2G4ydMiuC37MNYKLEIjuCxpnFhcsUnqlzGPGzWNifXc6pW9QwemUCNWFMZXBf2XD9ouEGLfJDONeUe6aUN3xERBjWcTnV14k2MKc_DxrRmSiIR57wnZ5DE1fB68wtQx29WwobzVFdhqOulr4zJsYA593sqgymADd0BKQpohAG5Ce_p-RbqPRNsahiPZ8fX4EPAQoLUvCsEvzdrqjpMuhqEZA8siiHSIm63ZEIFLbLFGnaJlAbyiPGKiYTkb2N"/>
+</div>
+<div class="w-full aspect-[3/4] rounded-fm-lg overflow-hidden bg-fm-muted relative shadow-fm-soft group">
+<img alt="Overcoat full body shot" class="w-full h-full object-cover transition-transform duration-[800ms] ease-fm-fluid group-hover:scale-105" data-alt="full body shot of model wearing long structured wool overcoat walking away, muted lighting, concrete background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTGP1YCbjv3nr9Nd3c3gE_aVx0zI4UY401xv0v3HaE9ecM_4Wb4DKDDLPRjygrlY526CUzkD8CwJgq7Z0Ukz9yQn2FPysoFGYWs4-SAb4klW3bnETk91Fi0_Yw9U-ESxu8COt4DuiVSwiLHfTTahVwngvrwu9fH-KvCRaH8NcNFbP7jWujM-oRQbZZPuGqOGSHhsfGL3rIHnzNqkDKdooV00Iw6Zg1o0V97oGI3J79hAIK4RLhoFgABYJgm02nsfpuvVK25kN_Zm9S"/>
+</div>
+</div>
+<!-- Right Side: Sticky Glass Panel (40%) -->
+<div class="w-[40%] h-screen sticky top-0 right-0 flex items-center justify-end p-8 z-20 pointer-events-none">
+<!-- Glassmorphic Container -->
+<div class="w-[35vw] max-h-[870px] rounded-fm-lg glass-panel shadow-fm-soft p-12 flex flex-col pointer-events-auto border border-white/20 overflow-y-auto hide-scrollbar">
+<!-- Breadcrumb / Meta -->
+<div class="text-[12px] font-medium uppercase tracking-[0.05em] text-fm-accent mb-4">
+                    Outerwear — Autumn/Winter
+                </div>
+<!-- Title & Price -->
+<h1 class="font-display font-medium text-[40px] leading-[1.1] tracking-[-0.02em] text-fm-primary mb-2">
+                    Structured Wool Overcoat
+                </h1>
+<p class="font-display font-medium text-[24px] text-fm-text mb-10">
+                    $1,250
+                </p>
+<!-- Color Selection (Implicit in description, adding subtle visual) -->
+<div class="mb-8">
+<p class="text-[12px] font-medium uppercase tracking-[0.05em] text-fm-text mb-4">Color: Charcoal</p>
+<div class="flex gap-3">
+<button class="w-8 h-8 rounded-full bg-[#21201E] ring-1 ring-offset-2 ring-offset-fm-background ring-fm-primary"></button>
+<button class="w-8 h-8 rounded-full bg-[#E8E6DF] border border-fm-muted hover:border-fm-primary transition-colors"></button>
+</div>
+</div>
+<!-- Abstract Size Selector -->
+<div class="mb-12">
+<div class="flex justify-between items-end mb-4">
+<p class="text-[12px] font-medium uppercase tracking-[0.05em] text-fm-text">Select Size</p>
+<button class="text-[12px] underline text-fm-accent hover:text-fm-primary transition-colors">Size Guide</button>
+</div>
+<div class="flex gap-4">
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="size" type="radio" value="s"/>
+<div class="w-10 h-10 rounded-full border border-fm-muted flex items-center justify-center text-sm font-medium text-fm-text transition-all duration-300 peer-checked:bg-fm-primary peer-checked:text-fm-background peer-checked:border-fm-primary group-hover:border-fm-primary">S</div>
+</label>
+<label class="relative cursor-pointer group">
+<input checked="" class="peer sr-only" name="size" type="radio" value="m"/>
+<div class="w-10 h-10 rounded-full border border-fm-muted flex items-center justify-center text-sm font-medium text-fm-text transition-all duration-300 peer-checked:bg-fm-primary peer-checked:text-fm-background peer-checked:border-fm-primary group-hover:border-fm-primary">M</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="size" type="radio" value="l"/>
+<div class="w-10 h-10 rounded-full border border-fm-muted flex items-center justify-center text-sm font-medium text-fm-text transition-all duration-300 peer-checked:bg-fm-primary peer-checked:text-fm-background peer-checked:border-fm-primary group-hover:border-fm-primary">L</div>
+</label>
+<label class="relative cursor-pointer group">
+<input class="peer sr-only" name="size" type="radio" value="xl"/>
+<div class="w-10 h-10 rounded-full border border-fm-muted flex items-center justify-center text-sm font-medium text-fm-text transition-all duration-300 peer-checked:bg-fm-primary peer-checked:text-fm-background peer-checked:border-fm-primary group-hover:border-fm-primary">XL</div>
+</label>
+</div>
+</div>
+<!-- Primary CTA -->
+<button class="w-full h-[64px] bg-fm-primary text-fm-background rounded-[32px] font-display font-medium text-[14px] uppercase tracking-wide hover:bg-black transition-colors duration-300 mb-12 flex items-center justify-center gap-2">
+                    Acquire Piece
+                    <span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Minimalist Accordions -->
+<div class="border-t border-fm-muted/50 pt-2 flex flex-col gap-0">
+<details class="group border-b border-fm-muted/50 py-4" open="">
+<summary class="flex justify-between items-center cursor-pointer text-[14px] uppercase tracking-wider font-medium text-fm-primary">
+                            Details
+                            <span class="material-symbols-outlined text-fm-accent group-open:rotate-180 transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 text-[16px] leading-[1.6] text-fm-text font-normal">
+<p class="mb-4">Crafted from heavy-weight Italian virgin wool, this overcoat features a dramatic drop shoulder and a structured architectural silhouette. The minimalist concealed placket and oversized lapels create a fluid, unbroken line.</p>
+<ul class="list-disc pl-4 space-y-1 text-[#4A4844]/80">
+<li>100% Virgin Wool Outer</li>
+<li>Cupro blend lining</li>
+<li>Concealed horn buttons</li>
+<li>Made in Portugal</li>
+</ul>
+</div>
+</details>
+<details class="group border-b border-fm-muted/50 py-4">
+<summary class="flex justify-between items-center cursor-pointer text-[14px] uppercase tracking-wider font-medium text-fm-primary">
+                            Shipping &amp; Returns
+                            <span class="material-symbols-outlined text-fm-accent group-open:rotate-180 transition-transform duration-300" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-4 text-[16px] leading-[1.6] text-fm-text font-normal">
+<p>Complimentary express shipping on all orders. Returns are accepted within 14 days of delivery in pristine, unworn condition with all archival tags attached.</p>
+</div>
+</details>
+</div>
+</div>
+</div>
+</main>
+</body></html>

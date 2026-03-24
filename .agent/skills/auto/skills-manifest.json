@@ -1,0 +1,73 @@
+{
+  "config": {
+    "enabled": true,
+    "lastGenerated": "2026-03-24T09:56:57.784Z",
+    "observationCount": 6,
+    "skillCount": 0,
+    "domain": "config",
+    "triggerGlobs": [
+      "**/*.yaml",
+      "**/*.yml",
+      "**/*.json",
+      "**/*.toml"
+    ],
+    "description": "Config for fashion boutique. ."
+  },
+  "project": {
+    "enabled": true,
+    "lastGenerated": "2026-03-24T09:56:57.784Z",
+    "observationCount": 37,
+    "skillCount": 0,
+    "domain": "project",
+    "triggerGlobs": [
+      "**/*"
+    ],
+    "description": "Project for fashion boutique. 13 conventions, 1 fixes."
+  },
+  "typescript-react": {
+    "enabled": true,
+    "lastGenerated": "2026-03-24T09:56:57.785Z",
+    "observationCount": 13,
+    "skillCount": 0,
+    "domain": "typescript-react",
+    "triggerGlobs": [
+      "**/*.tsx"
+    ],
+    "description": "Typescript React for fashion boutique. 2 fixes."
+  },
+  "typescript": {
+    "enabled": true,
+    "lastGenerated": "2026-03-24T09:56:57.785Z",
+    "observationCount": 2,
+    "skillCount": 0,
+    "domain": "typescript",
+    "triggerGlobs": [
+      "**/*.ts",
+      "**/*.tsx"
+    ],
+    "description": "Typescript for fashion boutique. ."
+  },
+  "css": {
+    "enabled": true,
+    "lastGenerated": "2026-03-24T09:56:57.785Z",
+    "observationCount": 2,
+    "skillCount": 0,
+    "domain": "css",
+    "triggerGlobs": [
+      "**/*.css",
+      "**/*.scss"
+    ],
+    "description": "Css for fashion boutique. ."
+  },
+  "html": {
+    "enabled": true,
+    "lastGenerated": "2026-03-24T09:56:57.785Z",
+    "observationCount": 2,
+    "skillCount": 0,
+    "domain": "html",
+    "triggerGlobs": [
+      "**/*.html"
+    ],
+    "description": "Html for fashion boutique. 1 conventions."
+  }
+}

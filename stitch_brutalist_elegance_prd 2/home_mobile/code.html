@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;500;700;800&amp;family=Manrope:wght@300;400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&amp;f[]=satoshi@300,400,500,700,900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-container": "#71766c",
+                        "on-surface-variant": "#454842",
+                        "surface-variant": "#e4e2dd",
+                        "outline": "#757871",
+                        "on-background": "#1b1c18",
+                        "inverse-surface": "#30312d",
+                        "primary-container": "#93908d",
+                        "on-tertiary-fixed-variant": "#434840",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#42493e",
+                        "tertiary": "#585e54",
+                        "outline-variant": "#c5c7bf",
+                        "on-tertiary-fixed": "#181d16",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f3",
+                        "surface": "#fbf9f3",
+                        "on-tertiary": "#ffffff",
+                        "surface-dim": "#dcdad4",
+                        "inverse-primary": "#cac6c2",
+                        "inverse-on-surface": "#f3f1eb",
+                        "surface-container-low": "#f5f3ed",
+                        "on-surface": "#1b1c18",
+                        "secondary-fixed": "#dee5d6",
+                        "surface-container-highest": "#e4e2dd",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#cac6c2",
+                        "surface-tint": "#605e5b",
+                        "surface-container-high": "#eae8e2",
+                        "background": "#fbf9f3",
+                        "tertiary-fixed-dim": "#c3c8bd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container": "#f0eee8",
+                        "primary": "#605e5b",
+                        "on-secondary-fixed": "#171d14",
+                        "on-secondary-container": "#60665b",
+                        "secondary": "#5a6055",
+                        "on-tertiary-container": "#fafef2",
+                        "on-primary-fixed": "#1c1b19",
+                        "primary-fixed": "#e6e2de",
+                        "on-primary-fixed-variant": "#484644",
+                        "secondary-container": "#dee5d6",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#dfe4d8",
+                        "on-primary-container": "#2b2a27",
+                        "secondary-fixed-dim": "#c2c9bb"
+                    },
+                    fontFamily: {
+                        "headline": ["Epilogue"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #fbf9f3;
+            color: #1b1c18;
+            -webkit-font-smoothing: antialiased;
+        }
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+        }
+        .glass-card {
+            background: rgba(251, 249, 243, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-stone-50/70 dark:bg-neutral-900/70 backdrop-blur-xl flex justify-between items-center px-8 py-6 w-full">
+<div class="hover:opacity-70 transition-opacity duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] scale-95 duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
+<span class="material-symbols-outlined text-neutral-900 dark:text-stone-50" data-icon="menu">menu</span>
+</div>
+<h1 class="font-['Clash_Display'] text-xl font-medium tracking-[0.2em] text-neutral-800 dark:text-stone-100 uppercase">Atelier Alabaster</h1>
+<div class="hover:opacity-70 transition-opacity duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] scale-95 duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]">
+<span class="material-symbols-outlined text-neutral-900 dark:text-stone-50" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</header>
+<main class="relative min-h-screen pb-32">
+<!-- Hero Campaign Section -->
+<section class="relative h-[813px] w-full overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover scale-105" data-alt="high fashion editorial shot of a woman in flowing silk Alabaster garments standing in a windy coastal landscape with soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJQsBxQYXpPBzpwiHGHyyUEGPDOOBH504VFOziqKDJEUeaiKbWoplXXj8sLrGu4zaemegkFE6_qV9eTkOF5Mxvgpjja0Gd7gGiakWlC7TO5D8gk1HKmtOxgRH_uR4VW924pKXbR19MrvflLoFIQIwXlnh0EuukbDSgrr1SfMf6VP9VhAtq0CDi2F3jZFGKktC-uUzKfJ_qXqtTHXq5qG-2T8rTs_IZ0xvtELHeeaB3Turp3byP4GRPpskM8sPUSqwJXambku8D17Fq"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-surface/40"></div>
+<!-- Hero Content Overlay -->
+<div class="absolute inset-0 flex flex-col justify-end px-8 pb-24">
+<div class="flex flex-col space-y-2 translate-y-4">
+<p class="font-['Clash_Display'] text-sm tracking-[0.4em] text-on-surface/60 uppercase">The New Era</p>
+<h2 class="font-['Clash_Display'] text-5xl font-light tracking-tight text-on-surface leading-[0.9] -ml-1">
+                        AUTUMN<br/>
+<span class="italic font-normal">/WINTER</span>
+</h2>
+</div>
+</div>
+</section>
+<!-- Signature Component: The Floating Lookbook (Horizontal Scroll) -->
+<section class="mt-[-8vh] relative z-10">
+<div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar space-x-6 px-8 py-12">
+<!-- Lookbook Item 1 -->
+<div class="flex-none w-[80vw] snap-center group">
+<div class="relative overflow-hidden rounded-lg aspect-[3/4] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="minimalist studio photography of structured beige blazer draped over an ivory pedestal soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwKD3U9uBrKMqCAM9KUSYf5MPfKeVvkh548iANGtwvQabJ7O5I2Nj7Tnq1WhLGQq9SS3B7QNVTiXAccIcmn9JnUC7KOzU9axn53nc4B5m8-ZeTdck1XEqqMPSNoTVu1R5-714KeE3Kroo8Ze5D3QTl1CLdqsggHMQ__pXfwEXxLWbS7JE3HLh1jkxcsU6ae7wBihmKp89bL9TFIoVnfFC_YZgdvrK3Mkrnd4XG5vLBXEHL0WQZC_99mRUevYUcbRt14-M7qWMB6QoL"/>
+<div class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-lg">
+<h3 class="font-['Clash_Display'] text-lg font-medium tracking-wide">SILK STRUCTURE</h3>
+<p class="font-body text-xs text-on-surface/60 mt-1 uppercase tracking-widest">Available Now</p>
+</div>
+</div>
+</div>
+<!-- Lookbook Item 2 -->
+<div class="flex-none w-[80vw] snap-center group">
+<div class="relative overflow-hidden rounded-lg aspect-[3/4] transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.02]">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="macro detail of fine knit cashmere texture in soft sage green natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi3GGXM4EumNOQEZr7HXQjJjirO1rDfb7tR1XjdxIktfi72e9ZBzYjfIhin9QE3547rBZu2qqb1ElJp2AYD9Ob_dJHjN5EzONlt3n5iwg1MIeXqCFqwgO9S91KKeS-1vIMGI6cuFVhpZJm4Xh9Upygcn7__9y_NV7b4PxhRghexTuuvGqAQnAlJJwQV6MRhNLqw_4fvs66GppfqJZvtta1NigTTd7zhabIT9J4RdwV0dxDSlbohDzeFwL-LbWSaNG6ryBU9UjCW-td"/>
+<div class="absolute bottom-6 left-6 right-6 glass-card p-6 rounded-lg">
+<h3 class="font-['Clash_Display'] text-lg font-medium tracking-wide">MUTED SAGE</h3>
+<p class="font-body text-xs text-on-surface/60 mt-1 uppercase tracking-widest">Limited Edition</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Action Bar -->
+<section class="px-8 mt-4 flex flex-col items-center">
+<button class="w-full py-6 rounded-full bg-primary text-on-primary font-['Clash_Display'] tracking-widest text-sm uppercase transition-all duration-600 ease-[cubic-bezier(0.16,1,0.3,1)] active:scale-95 shadow-xl shadow-primary/10">
+                Explore Collection
+            </button>
+<p class="mt-8 font-['Clash_Display'] text-[10px] tracking-[0.3em] text-on-surface/40 uppercase">Curating the Digital Atelier</p>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-6 pb-8 pt-4 bg-stone-50/80 dark:bg-neutral-900/80 backdrop-blur-2xl z-50 rounded-t-[40px] shadow-[0_-4px_40px_rgba(0,0,0,0.04)]">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-emerald-800 dark:text-emerald-400 font-bold scale-110 duration-600 ease-[cubic-bezier(0.16,1,0.3,1)]" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="home_max" style="font-variation-settings: 'FILL' 1;">home_max</span>
+<span class="font-['Satoshi'] text-[10px] tracking-tight mt-1">Home</span>
+</a>
+<!-- Collections -->
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-600" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome_motion">auto_awesome_motion</span>
+<span class="font-['Satoshi'] text-[10px] tracking-tight mt-1">Collections</span>
+</a>
+<!-- Lookbook -->
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-600" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="collections">collections</span>
+<span class="font-['Satoshi'] text-[10px] tracking-tight mt-1">Lookbook</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-neutral-400 dark:text-neutral-500 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors duration-600" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="person_outline">person_outline</span>
+<span class="font-['Satoshi'] text-[10px] tracking-tight mt-1">Profile</span>
+</a>
+</nav>
+<!-- Visual Polish: Ambient Glows -->
+<div class="fixed top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-tertiary/5 rounded-full blur-[120px] pointer-events-none z-0"></div>
+<div class="fixed bottom-[-5%] left-[-10%] w-[60vw] h-[60vw] bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
+</body></html>

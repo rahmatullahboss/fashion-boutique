@@ -1,0 +1,38 @@
+.home-page {
+  overflow: hidden;
+}
+
+/* ═══════════════════════════════════════
+   Desktop CTA
+   ═══════════════════════════════════════ */
+.home-cta-desktop {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 2rem 2rem;
+}
+
+/* ═══════════════════════════════════════
+   Mobile CTA
+   ═══════════════════════════════════════ */
+.home-cta-mobile {
+  padding: 1rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-cta-mobile .btn-full {
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  border-radius: var(--radius-pill);
+}
+
+.home-tagline {
+  margin-top: 2rem;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(27, 28, 24, 0.4);
+}

@@ -1,0 +1,197 @@
+/* ─── Trust Strip ─────────────────────────────────────────────── */
+.trust-strip {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px 24px;
+  background: #1a1a1a;
+  flex-wrap: wrap;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #c8c0b4;
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.825rem;
+  letter-spacing: 0.04em;
+}
+
+.trust-item .material-symbols-outlined {
+  font-size: 1.1rem;
+  color: #9d8f7e;
+}
+
+/* ─── Newsletter ──────────────────────────────────────────────── */
+.newsletter-cta {
+  background: #f5f2ed;
+  margin-top: 80px;
+}
+
+.newsletter-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 72px 24px 56px;
+  text-align: center;
+}
+
+.newsletter-eyebrow {
+  display: block;
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #9d8f7e;
+  margin-bottom: 16px;
+}
+
+.newsletter-heading {
+  font-family: "Clash Display", sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 16px;
+  color: #1a1a1a;
+}
+
+.newsletter-sub {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #6b6256;
+  margin: 0 0 32px;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1.5px solid #1a1a1a;
+  border-radius: 60px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 16px 20px;
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.9375rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: #1a1a1a;
+  min-width: 0;
+}
+
+.newsletter-input::placeholder {
+  color: #aaa;
+}
+
+.newsletter-btn {
+  padding: 16px 28px;
+  font-family: "Clash Display", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #1a1a1a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.newsletter-btn:hover:not(:disabled) {
+  background: #333;
+}
+
+.newsletter-btn:disabled {
+  background: #5a7a5a;
+}
+
+.newsletter-note {
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.775rem;
+  color: #aaa;
+  margin: 16px 0 0;
+}
+
+/* ─── Persona Links ───────────────────────────────────────────── */
+.persona-links {
+  padding: 32px 24px 48px;
+  text-align: center;
+  border-top: 1px solid #e6e0d8;
+}
+
+.persona-label {
+  display: block;
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9d8f7e;
+  margin-bottom: 16px;
+}
+
+.persona-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.persona-chip {
+  font-family: "Satoshi", sans-serif;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 8px 20px;
+  border: 1px solid #c8c0b4;
+  border-radius: 60px;
+  color: #4a3f35;
+  text-decoration: none;
+  background: #fff;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+
+.persona-chip:hover {
+  background: #1a1a1a;
+  color: #fff;
+  border-color: #1a1a1a;
+}
+
+/* ─── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .trust-strip {
+    gap: 20px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 16px 20px;
+  }
+
+  .trust-item {
+    flex-shrink: 0;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 12px;
+    border: 1.5px solid #1a1a1a;
+  }
+
+  .newsletter-input {
+    border-bottom: 1px solid #e0dcd4;
+    border-radius: 0;
+  }
+
+  .newsletter-btn {
+    border-radius: 0;
+    padding: 14px;
+    text-align: center;
+  }
+}

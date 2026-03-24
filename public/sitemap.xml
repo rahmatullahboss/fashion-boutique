@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/wool-overcoat.webp</image:loc>
+      <image:title>Atelier Alabaster — Fluid Modernity Boutique</image:title>
+    </image:image>
+  </url>
+
+  <!-- Collection pages -->
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/collection</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/collection/autumn-winter-2026</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/wool-overcoat.webp</image:loc>
+      <image:title>Autumn Winter 2026 Collection — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/collection/spring-summer-2026</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/silk-blouse.webp</image:loc>
+      <image:title>Spring Summer 2026 Collection — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+
+  <!-- Product pages -->
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/structured-wool-overcoat</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/wool-overcoat.webp</image:loc>
+      <image:title>Structured Wool Overcoat — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/cashmere-knit-sweater</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/cashmere-sweater.webp</image:loc>
+      <image:title>Cashmere Knit Sweater — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/pleated-wide-trousers</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/pleated-trousers.webp</image:loc>
+      <image:title>Pleated Wide Trousers — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/merino-turtleneck</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/silk-drape-blouse</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/silk-blouse.webp</image:loc>
+      <image:title>Silk Drape Blouse — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/linen-field-jacket</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/linen-jacket.webp</image:loc>
+      <image:title>Linen Field Jacket — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/cotton-poplin-shirt</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/cotton-shirt.webp</image:loc>
+      <image:title>Cotton Poplin Shirt — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/product/relaxed-drawstring-pant</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/products/drawstring-pant.webp</image:loc>
+      <image:title>Relaxed Drawstring Pant — Atelier Alabaster</image:title>
+    </image:image>
+  </url>
+
+  <!-- Lookbook -->
+  <url>
+    <loc>https://atelier-alabaster.rahmatullahzisan.workers.dev/lookbook</loc>
+    <lastmod>2026-03-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

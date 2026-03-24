@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://atelier-alabaster.rahmatullahzisan.workers.dev/sitemap.xml
+
+# Crawl-delay for polite crawlers
+Crawl-delay: 1
+
+# Disallow non-public paths
+Disallow: /api/
+Disallow: /.wrangler/

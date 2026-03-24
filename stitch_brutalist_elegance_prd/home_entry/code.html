@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fluid Modernity - Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5fec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f6f8f6; /* background-light */
+            overflow-x: hidden;
+        }
+
+        /* Simplified CSS representations of requested animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUpFade {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        .animate-slide-up-fade {
+            animation: slideUpFade 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+        }
+
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100vw;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        
+        .glass-panel {
+            background: rgba(246, 248, 246, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Simulating the scroll effect on the hero */
+        .hero-section {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            transform-origin: center top;
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), border-radius 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Noise overlay */
+        .noise-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+            opacity: 0.05;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+    </style>
+</head>
+<body class="text-background-dark antialiased">
+<!-- Floating Nav Pill -->
+<nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-[400px] h-[56px] rounded-full glass-panel flex items-center justify-between px-8 shadow-[0_20px_40px_rgba(22,34,16,0.04)] animate-slide-up-fade" style="animation-delay: 0.5s;">
+<div class="flex items-center gap-2">
+<svg class="w-5 h-5 text-background-dark" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<span class="text-sm font-bold tracking-tight">FM</span>
+</div>
+<div class="flex items-center gap-6">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Collections</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Archive</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Cart</a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="hero-section bg-background-light overflow-hidden animate-fade-in relative">
+<!-- Background Image/Video representation -->
+<div class="absolute inset-0 bg-cover bg-center" data-alt="high fashion editorial model wearing avant-garde muted tones standing in a vast minimal landscape with soft overcast lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAlw4lqR7GtX5kOmlpvvgD7wUP_lo1yNwrqlKp5edeoZ4UaHJg-vHO9rewlTInm20JcXABk7M4N0hOpd3487qLsbcyrSAACYPMsyalyrGSwfd--xwEukC-YWb9s6IcMpiO2xqCAx8CCrAi8TugtGVLuTVDUka_dqygahfQPiPxu4iojHXiCwm4MVJJRVGBj3Ae4bqu2uDywml2ERRmEYYYgepTq4TX5Vh34UAgpTp05jrKGudNFtwyqkQf06Z09wcOMhMPShCHg7RE1');"></div>
+<div class="absolute inset-0 bg-black/20"></div> <!-- Soft dark overlay for contrast -->
+<div class="noise-overlay"></div>
+<div class="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
+<h1 class="text-white text-5xl md:text-7xl lg:text-8xl font-black tracking-[-0.03em] leading-tight animate-slide-up-fade" style="animation-delay: 0.8s;">
+                Fluid Modernity
+            </h1>
+<p class="text-white/80 mt-4 text-lg md:text-xl font-medium tracking-wide animate-slide-up-fade" style="animation-delay: 1s;">
+                Immersive brand introduction
+            </p>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-slide-up-fade" style="animation-delay: 1.2s;">
+<button class="flex items-center gap-2 text-white/90 hover:text-primary transition-colors group">
+<span class="text-sm font-bold uppercase tracking-widest">Explore</span>
+<span class="material-symbols-outlined text-lg group-hover:translate-y-1 transition-transform">arrow_downward</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Marquee Section -->
+<section class="py-12 bg-background-light overflow-hidden">
+<div class="marquee-container flex items-center h-32">
+<div class="marquee-content text-6xl md:text-8xl lg:text-[120px] font-black tracking-[-0.02em] text-primary whitespace-nowrap opacity-90 uppercase">
+                AUTUMN/WINTER — AUTUMN/WINTER — AUTUMN/WINTER — AUTUMN/WINTER — 
+            </div>
+<!-- Duplicate for seamless loop -->
+<div aria-hidden="true" class="marquee-content text-6xl md:text-8xl lg:text-[120px] font-black tracking-[-0.02em] text-primary whitespace-nowrap opacity-90 uppercase">
+                AUTUMN/WINTER — AUTUMN/WINTER — AUTUMN/WINTER — AUTUMN/WINTER — 
+            </div>
+</div>
+</section>
+<!-- Collection Previews (Fluid overlapping layout) -->
+<main class="relative z-20 bg-background-light px-4 md:px-8 pb-32">
+<div class="max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-24 md:gap-40 pt-12">
+<!-- Preview Block 1 -->
+<div class="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+<div class="w-full md:w-5/12 aspect-[3/4] rounded-[40px] overflow-hidden relative group">
+<img alt="Editorial fashion model" class="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-105" data-alt="close up of a modern minimalist coat with subtle geometric cuts in soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1RDUosd9I2y_IJqvzGl5lKALWd0QMcZpwCq8eEl41nucOuoHx1USEZnHk4hUXNOGwQdQnOQmrYbTGvmtYzC1xG75MXKrTdYZYz1PhofFiOcKzX7KlkPB0QgoqK2j2zziykU0dnOpRjphVnIkfmv6hAN50BnX6MsnuLP79SWyq8tHtcw8qBiuHqB8DUDN1wfil8vfbqDtFY4C_VC4YW0WwIoOjIwgFbb2I-h_3dk734K1EBdEkW1pr4bJ5olrP5ttOolix1UV-gaxU"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+<div class="noise-overlay opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500"></div>
+</div>
+<div class="w-full md:w-5/12 md:pl-12 flex flex-col items-start">
+<span class="text-xs font-bold uppercase tracking-[0.05em] text-background-dark/50 mb-4">Look 01</span>
+<h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-background-dark">Structural Fluidity</h2>
+<p class="text-background-dark/70 leading-[1.6] mb-8 max-w-md">Embracing the contrast between rigid architectural forms and the soft drape of natural textiles.</p>
+<a class="inline-flex items-center justify-center rounded-xl h-12 px-6 bg-background-dark text-background-light text-sm font-bold uppercase tracking-wide hover:bg-primary hover:text-background-dark transition-colors duration-300" href="#">
+                            Discover
+                        </a>
+</div>
+</div>
+<!-- Preview Block 2 (Offset) -->
+<div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16">
+<div class="w-full md:w-6/12 aspect-[4/5] rounded-[40px] overflow-hidden relative group md:-mt-32">
+<img alt="Editorial fashion model" class="w-full h-full object-cover transition-transform duration-[800ms] group-hover:scale-105" data-alt="full body shot of a model wearing flowing neutral layers walking through an empty concrete gallery space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKsbeDMROZEjK-CywGH90t9WDP9pljFL1JoeVHhoT_1HOWZSbKBB1jrq41RfDs0Q-uldnl1N7yKkZ6w6XBtWbVMy4vmIru-lrqHzLHi0fPf6_pODNDmkTGD00ZKGvoS7oSC5Hljg6MYmgeAYseDnY8PRjKevBgXeqPA8pftD_rA5VDKQuD31HDARFzIRnpgEd7D218d4Kg5YLLLLDtNH2yLs7nsre9jvJOI0LvmAlnnYemHynx9-EHB_Tv648pyvQAU8c2FLMA1S4S"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-500"></div>
+<div class="noise-overlay opacity-0 group-hover:opacity-[0.03] transition-opacity duration-500"></div>
+</div>
+<div class="w-full md:w-4/12 md:pr-12 flex flex-col items-start">
+<span class="text-xs font-bold uppercase tracking-[0.05em] text-background-dark/50 mb-4">Look 02</span>
+<h2 class="text-3xl md:text-5xl font-bold tracking-tight mb-6 text-background-dark">Muted Tones</h2>
+<p class="text-background-dark/70 leading-[1.6] mb-8 max-w-md">A study in restraint. Exploring the subtle variations of alabaster, charcoal, and sage.</p>
+<a class="inline-flex items-center justify-center rounded-xl h-12 px-6 bg-background-dark text-background-light text-sm font-bold uppercase tracking-wide hover:bg-primary hover:text-background-dark transition-colors duration-300" href="#">
+                            Discover
+                        </a>
+</div>
+</div>
+</div>
+<div class="mt-32 flex justify-center">
+<button class="flex min-w-[140px] items-center justify-center overflow-hidden rounded-xl h-14 px-8 bg-primary text-background-dark text-base font-bold uppercase tracking-wide shadow-[0_10px_30px_rgba(95,236,19,0.2)] hover:scale-105 transition-transform duration-300">
+                    View Full Collection
+                </button>
+</div>
+</div>
+</main>
+</body></html>

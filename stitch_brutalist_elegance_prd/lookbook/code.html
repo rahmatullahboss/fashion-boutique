@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lookbook - Fluid Modernity</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#5fec13",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#162210",
+                        "text-main": "#21201E",
+                        "text-muted": "#4A4844",
+                        "border-muted": "#D6D3C9",
+                        "surface-glass": "rgba(244, 242, 236, 0.6)"
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "md": "1rem",
+                        "lg": "2.5rem", /* 40px radius as requested in specs */
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        'vw': '100vw',
+                        'vh': '100vh',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F4F2EC; /* Warm muted alabaster */
+            color: #21201E;
+            overflow-x: hidden;
+            overscroll-behavior-y: none; /* Prevent bounce on horizontal scroll wrapper */
+        }
+
+        /* Hide scrollbar for the horizontal wrapper but allow scrolling */
+        .horizontal-scroll-wrapper {
+            display: flex;
+            width: fit-content;
+            height: 100vh;
+            overflow-y: hidden;
+            overflow-x: auto;
+            scroll-behavior: smooth; /* Native smooth scroll for this static mockup */
+        }
+        
+        .horizontal-scroll-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        .canvas-section {
+            height: 100vh;
+            width: 100vw;
+            flex-shrink: 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .glass-panel {
+            background: rgba(244, 242, 236, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(214, 211, 201, 0.5);
+        }
+
+        /* Simulated Parallax Classes for static CSS visualization */
+        .parallax-bg { transform: translateX(5%); }
+        .parallax-fg { transform: translateX(-5%); z-index: 10; }
+        .parallax-fast { transform: translateX(-10%); z-index: 20; }
+
+        .image-frame {
+            border-radius: 2.5rem; /* 40px */
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(33, 32, 30, 0.04);
+            border: 1px solid #D6D3C9;
+            position: absolute;
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .text-prose {
+            color: #4A4844;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary selection:text-text-main">
+<!-- Shared TopNavBar (Destination Screen) -->
+<div class="fixed top-0 left-0 right-0 z-50 flex justify-center py-5 pointer-events-none">
+<header class="pointer-events-auto glass-panel flex items-center justify-between whitespace-nowrap px-8 py-3 rounded-full w-[90%] max-w-[960px] shadow-[0_20px_40px_rgba(33,32,30,0.04)]">
+<div class="flex items-center gap-4 text-text-main">
+<div class="size-4">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M39.475 21.6262C40.358 21.4363 40.6863 21.5589 40.7581 21.5934C40.7876 21.655 40.8547 21.857 40.8082 22.3336C40.7408 23.0255 40.4502 24.0046 39.8572 25.2301C38.6799 27.6631 36.5085 30.6631 33.5858 33.5858C30.6631 36.5085 27.6632 38.6799 25.2301 39.8572C24.0046 40.4502 23.0255 40.7407 22.3336 40.8082C21.8571 40.8547 21.6551 40.7875 21.5934 40.7581C21.5589 40.6863 21.4363 40.358 21.6262 39.475C21.8562 38.4054 22.4689 36.9657 23.5038 35.2817C24.7575 33.2417 26.5497 30.9744 28.7621 28.762C30.9744 26.5497 33.2417 24.7574 35.2817 23.5037C36.9657 22.4689 38.4054 21.8562 39.475 21.6262ZM4.41189 29.2403L18.7597 43.5881C19.8813 44.7097 21.4027 44.9179 22.7217 44.7893C24.0585 44.659 25.5148 44.1631 26.9723 43.4579C29.9052 42.0387 33.2618 39.5667 36.4142 36.4142C39.5667 33.2618 42.0387 29.9052 43.4579 26.9723C44.1631 25.5148 44.659 24.0585 44.7893 22.7217C44.9179 21.4027 44.7097 19.8813 43.5881 18.7597L29.2403 4.41187C27.8527 3.02428 25.8765 3.02573 24.2861 3.36776C22.6081 3.72863 20.7334 4.58419 18.8396 5.74801C16.4978 7.18716 13.9881 9.18353 11.5858 11.5858C9.18354 13.988 7.18717 16.4978 5.74802 18.8396C4.58421 20.7334 3.72865 22.6081 3.36778 24.2861C3.02574 25.8765 3.02429 27.8527 4.41189 29.2403Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-text-main text-lg font-bold leading-tight tracking-[-0.015em]">Fluid Modernity</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors duration-300" href="#">Home</a>
+<a class="text-text-main text-sm font-medium leading-normal hover:text-primary transition-colors duration-300" href="#">Collection</a>
+<a class="text-text-main text-sm font-bold leading-normal border-b-2 border-primary" href="#">Lookbook</a>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-6 bg-primary text-text-main text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#4dd60e] transition-colors duration-300">
+<span class="truncate">Shop</span>
+</button>
+</div>
+</header>
+</div>
+<!-- Main Horizontal Canvas -->
+<main class="horizontal-scroll-wrapper">
+<!-- Canvas Section 1: Intro -->
+<section class="canvas-section">
+<div class="absolute left-[10vw] top-[307px] max-w-xl z-10 parallax-bg">
+<h1 class="text-6xl md:text-8xl font-bold tracking-[-0.02em] text-text-main leading-none mb-6">
+                    Fluidity<br/>in motion.
+                </h1>
+<p class="text-prose text-lg max-w-md">
+                    The Autumn/Winter collection abandons rigid constraints, embracing soft silhouettes and kinetic energy. A digital exploration of form and fabric.
+                </p>
+<div class="mt-8 flex items-center gap-2 text-text-muted text-sm uppercase tracking-[0.05em] font-medium">
+<span>Scroll to explore</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
+</div>
+</div>
+<div class="image-frame parallax-fg right-[15vw] top-[153px] w-[35vw] h-[716px]">
+<img alt="Model in trench coat" data-alt="Fashion model walking dynamically in an oversized muted sage green trench coat, studio lighting, soft shadows, high fashion editorial style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPFcUdJApQCe72_qsfrreIWWFLjW4zmLEOGWNtVszx7HZrBHD1ZRwnmigEzfcg-FpJWH5nWX7a2oA2_xVsO49Q2bmmxRPqqB-mdAA3V4Y_cq-3e4WvIEACy_azKk0enKmNxGBu7GGoSIjdZCcz-HADFoYleOkBP0dgnE_Yr8PybZyPuGiT7BbgohuaEYYm-7QsaUHfl-IsnkbpJxHZ-ZKsmkO5gzaJuUqBreX8vvPbmoTfF0oe0z2x3gdt2LGX39tzxyNGRJtQtcXy"/>
+</div>
+<div class="image-frame parallax-fast right-[10vw] bottom-[102px] w-[20vw] h-[307px]">
+<img alt="Fabric texture" data-alt="Close up texture of soft muted taupe woven wool fabric with subtle drapery and soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCytBEf-W0f9AefIjZPATWzHA7JEfILIro90Or6HWiUMjjjI-yXqHovTyhaY6vQqqp0sLMyIKzkBCLGFgmQTjKyLZgjagDs-P4dRQlfRATZpe0A3YaSy1qrax-ljQeUvC8toekKzzKrsmgSGNDFRsE6DRtgrUDLlVNFpaMkpiPBpzHusH3naOxdkjhWUyV4lwjW_5qtyj5znWH0qrsdL3iGDDpua_6st906tsarTzjI7elvQMyaNVRqS37IMsaPSCFv2OLScewD11a"/>
+</div>
+</section>
+<!-- Canvas Section 2: Overlapping Story -->
+<section class="canvas-section">
+<div class="image-frame parallax-bg left-[5vw] top-[204px] w-[25vw] h-[409px]">
+<img alt="Layered fabrics" data-alt="Minimalist still life of layered silk fabrics in alabaster and charcoal tones, soft geometric folds, studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn8UpeDfBBh4CsAA3MyJD9ozVto_xJ4BzQj92uoduvVhIlpJiFs6pAqUF-ryQvTIDIWgrK_JVTtFqKfceAA_kepgRKFM2cGL_QgteWhGWRqscrfQG5Dan3sEznS1YGgNCbSg_ATlspZO2xEuIx8K89M35JCWRHL1HzTiyzs5fD0L_PMtYj6yGaXgoCZ30M1moOSUzgxzLbelu_TLuFrxFrwI9GkAkgg4P-MnsjIjel6l-erSyqOJABk0HWtj7rOPAUZA9uSkAcjVeX"/>
+</div>
+<div class="absolute left-[20vw] top-[665px] max-w-sm z-10 text-prose italic text-xl parallax-fg">
+                "We drape not to conceal, but to reveal the natural rhythm of the human form."
+            </div>
+<div class="image-frame right-[25vw] top-[102px] w-[40vw] h-[819px] z-0">
+<img alt="Model in structural blazer" data-alt="Androgynous model wearing a structural yet fluid black blazer against a warm muted background, moody artistic lighting, looking away" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB00B7GarI-mW0Smpfsx7Aou9vvO3_jk8yVbmMswlOtbWbq9LkFhmaRtv7hC-ziAHC1c0SgxTqfaUiE8UOFXNrzF4NgUVa2TKTW6wuVjfhfKAKtD1s6vy_8ow-6q9NfKvOpc1Rk8k1WlH53i94QWkSevweLDbHqTYg60xd2UHTv9Hesd4U6TJFyfzxorFxS_6QLPw3WFobJhki5Is1WO-yH9-8IwjJ44m4NTCDea1kN1_Cb0KMbh2-bnohCuUlVXvHdAS7mm6OP0XTa"/>
+</div>
+<div class="image-frame parallax-fast right-[15vw] top-[307px] w-[18vw] h-[409px] glass-panel flex flex-col justify-center p-8">
+<span class="text-xs uppercase tracking-[0.05em] text-text-muted mb-2">Look 02</span>
+<h3 class="text-2xl font-bold tracking-tight text-text-main mb-4">The Kinetic Blazer</h3>
+<p class="text-sm text-text-muted mb-6">Structured wool interlaced with silk panels, allowing unprecedented movement.</p>
+<button class="w-10 h-10 rounded-full border border-border-muted flex items-center justify-center text-text-main hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">add</span>
+</button>
+</div>
+</section>
+<!-- Canvas Section 3: Finale & CTA -->
+<section class="canvas-section">
+<div class="image-frame parallax-bg left-[10vw] top-[153px] w-[30vw] h-[716px]">
+<img alt="Abstract fashion motion" data-alt="Abstract fashion silhouette in motion, motion blur effect, muted color palette with soft sage accents, avant-garde style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGJN9JIQnOj8iIJ_Fagz6vDwMAGYaYqkjuKffjA9wX-OtuuApdERttmvdx6ilIM3XSLgu3V1kl8R4HJvA6Jr3q_XMErlTzJZiK1YQTJOoyiho1Xd4UWVnYX4wwPwcxsZoUNfTTIORqTA079X4RpybV2coiQzyXUkg78CEipN3TI6xzFj0nPcn0jeb_LZzbEb8rhjNMVWLbULXcS5JJC9bUeCSGnA6SR0A_8CX7Tj3C5RYhdg1VwNLmK5WLGZUW-oMyl9etdfyn3bI6"/>
+</div>
+<div class="absolute right-[15vw] flex flex-col items-start max-w-lg z-20 parallax-fg">
+<h2 class="text-5xl md:text-7xl font-bold tracking-[-0.02em] text-text-main leading-none mb-8">
+                    The Archive<br/>Awaits.
+                </h2>
+<p class="text-prose text-lg mb-10">
+                    Experience the full collection. Every piece designed with intention, crafted for movement.
+                </p>
+<button class="group flex items-center gap-4 bg-text-main text-[#F4F2EC] px-8 py-4 rounded-full font-bold uppercase tracking-[0.05em] text-sm hover:bg-primary hover:text-text-main transition-all duration-300">
+<span>Explore Collection</span>
+<span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+</div>
+</section>
+</main>
+</body></html>
