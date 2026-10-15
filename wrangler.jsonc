@@ -16,7 +16,7 @@
   // Environment variables
   "vars": {
     "ENVIRONMENT": "development",
-    "DATABASE_URL": "postgresql://neondb_owner:npg_H48WrntCamfb@ep-muddy-poetry-a1kozb1k-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require",
+
     "STRIPE_PUBLISHABLE_KEY": "pk_test_51TDDvHR73A7Q7hFUBgdC5UA6qihPhMf0BfIozLvyzel1QFiwGh2KgTRV7FT2u65Q1tv0yGfvbAAbRmexb4XMYElZ00ud6AGQh5",
     "SITE_URL": "https://showcase.digitalcare.site"
   }
