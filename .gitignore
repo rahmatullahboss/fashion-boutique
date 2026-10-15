@@ -26,3 +26,12 @@ dist-ssr
 AGENT.md
 CLAUDE.md
 .agent-mem/
+
+# Sensitive developer and Worker secrets (never commit real values)
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.wrangler/

@@ -10,37 +10,15 @@ const formatPrice = (cents: number) =>
     minimumFractionDigits: 0,
   }).format(cents / 100);
 
-const COUNTRIES = [
-  "United States", "United Kingdom", "Canada", "Australia", "Bangladesh",
-  "India", "Pakistan", "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Bahrain",
-  "Oman", "Malaysia", "Indonesia", "Singapore", "France", "Germany",
-  "Netherlands", "Sweden", "Norway", "Denmark", "Switzerland", "Italy",
-  "Spain", "Portugal", "Japan", "South Korea", "New Zealand", "Other",
-];
-
 export default function CheckoutPage() {
-  const { items, subtotal, clearCart } = useCart();
+  const { items, subtotal } = useCart();
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const shipping = 0;
-  const tax = Math.round(subtotal * 0.08);
-  const total = subtotal + shipping + tax;
+  const total = subtotal + shipping;
 
-  const [form, setForm] = useState({
-    email: "",
-    firstName: "",
-    lastName: "",
-    address: "",
-    city: "",
-    state: "",
-    zip: "",
-    country: "United States",
-  });
-
-  const handleChange = (field: string, value: string) => {
-    setForm((prev) => ({ ...prev, [field]: value }));
-  };
+  const [email, setEmail] = useState("");
 
   const handleStripeCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -53,13 +31,12 @@ export default function CheckoutPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           items: items.map((item) => ({
-            name: item.name,
-            price: item.price,
+            productId: item.productId,
             quantity: item.quantity,
-            image: item.image,
             size: item.size,
             color: item.color,
           })),
+          customerEmail: email,
         }),
       });
 
@@ -69,7 +46,7 @@ export default function CheckoutPage() {
         throw new Error(data.message || data.error || "Checkout failed");
       }
 
-      clearCart();
+      // Preserve cart when checkout is cancelled; clear only after confirmed payment.
       window.location.href = data.data.checkoutUrl;
     } catch (err) {
       console.error("Checkout error:", err);
@@ -112,75 +89,15 @@ export default function CheckoutPage() {
               placeholder="Email address"
               required
               className="form-input"
-              value={form.email}
-              onChange={(e) => handleChange("email", e.target.value)}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </section>
 
-          {/* Shipping */}
+          {/* Address is collected once, by Stripe, not silently discarded here. */}
           <section className="form-section">
-            <h3 className="form-section-title">Shipping Address</h3>
-            <div className="form-row">
-              <input
-                type="text"
-                placeholder="First name"
-                required
-                className="form-input"
-                value={form.firstName}
-                onChange={(e) => handleChange("firstName", e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="Last name"
-                required
-                className="form-input"
-                value={form.lastName}
-                onChange={(e) => handleChange("lastName", e.target.value)}
-              />
-            </div>
-            <input
-              type="text"
-              placeholder="Address"
-              required
-              className="form-input"
-              value={form.address}
-              onChange={(e) => handleChange("address", e.target.value)}
-            />
-            <div className="form-row form-row-3">
-              <input
-                type="text"
-                placeholder="City"
-                required
-                className="form-input"
-                value={form.city}
-                onChange={(e) => handleChange("city", e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="State / Province"
-                required
-                className="form-input"
-                value={form.state}
-                onChange={(e) => handleChange("state", e.target.value)}
-              />
-              <input
-                type="text"
-                placeholder="ZIP / Postal code"
-                required
-                className="form-input"
-                value={form.zip}
-                onChange={(e) => handleChange("zip", e.target.value)}
-              />
-            </div>
-            <select
-              className="form-input form-select"
-              value={form.country}
-              onChange={(e) => handleChange("country", e.target.value)}
-            >
-              {COUNTRIES.map((c) => (
-                <option key={c} value={c}>{c}</option>
-              ))}
-            </select>
+            <h3 className="form-section-title">Shipping</h3>
+            <p>Stripe Checkout will securely collect your shipping address after confirming product price and availability.</p>
           </section>
 
           {/* Payment — Stripe branded */}
@@ -244,7 +161,7 @@ export default function CheckoutPage() {
                 Redirecting to Stripe...
               </>
             ) : (
-              `Pay ${formatPrice(total)} →`
+              `Continue to payment · ${formatPrice(total)} →`
             )}
           </button>
 
@@ -279,10 +196,6 @@ export default function CheckoutPage() {
           <div className="summary-row">
             <span>Shipping</span>
             <span>{shipping === 0 ? "Free" : formatPrice(shipping)}</span>
-          </div>
-          <div className="summary-row">
-            <span>Tax (8%)</span>
-            <span>{formatPrice(tax)}</span>
           </div>
           <div className="summary-divider" />
           <div className="summary-row summary-total">
