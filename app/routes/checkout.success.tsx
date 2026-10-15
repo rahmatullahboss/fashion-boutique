@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useCart } from "../context/CartContext";
 import { Link, useSearchParams } from "react-router-dom";
 import "../styles/CheckoutSuccessPage.css";
 
@@ -18,6 +19,9 @@ interface VerifyResult {
 }
 
 export default function CheckoutSuccessPage() {
+  const { clearCart } = useCart();
+  const clearCartRef = useRef(clearCart);
+  clearCartRef.current = clearCart;
   const [searchParams] = useSearchParams();
   const sessionId = searchParams.get("session_id");
   const [status, setStatus] = useState<"loading" | "success" | "error">("loading");
@@ -37,6 +41,7 @@ export default function CheckoutSuccessPage() {
         if (!res.ok) {
           throw new Error(data.message || "Verification failed");
         }
+        clearCartRef.current();
         setResult(data.data);
         setStatus("success");
       })
@@ -92,11 +97,11 @@ export default function CheckoutSuccessPage() {
     <div className="success-page">
       <div className="success-card">
         <div className="success-icon">✓</div>
-        <h1 className="success-title">Order Confirmed</h1>
+        <h1 className="success-title">Payment Confirmed</h1>
         <p className="success-message">
           Thank you for your purchase!
           {result?.customerEmail && (
-            <> A confirmation email has been sent to <strong>{result.customerEmail}</strong>.</>
+            <> Payment contact: <strong>{result.customerEmail}</strong>.</>
           )}
         </p>
 
@@ -119,7 +124,7 @@ export default function CheckoutSuccessPage() {
         )}
 
         <p className="success-shipping-note">
-          📦 Your items will be carefully packaged and shipped within 2-3 business days.
+          📦 Payment has been verified. Fulfillment details will be confirmed separately.
         </p>
 
         <div className="success-actions">
